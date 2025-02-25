@@ -1,8 +1,8 @@
 import os
-import sys
 import argparse
 import datetime
 import numpy as np
+from tqdm import tqdm
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
 
@@ -140,7 +140,7 @@ if __name__ == '__main__':
 
     print(args)
 
-    for _ in range(args.count):
+    for _ in tqdm(range(args.count)):
         generate(
             font_path=args.font_path,
             texture_path=args.texture_path,
